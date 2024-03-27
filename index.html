@@ -2,37 +2,29 @@
 <html>
 
 <head>
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-T7TSN5K');
     </script>
 
     <title>Play Prodigy</title>
-    <meta
-        name="description"
-        content="Amazing pets, epic battles and math practice. Prodigy, the no-cost math game where kids can earn prizes, go on quests and play with friends all while learning math."
-     />
-    <meta
-        property="og:title"
-        content="Play Prodigy"
-    />
-    <meta
-        property="og:description"
-        content="Amazing pets, epic battles and math practice. Prodigy, the no-cost math game where kids can earn prizes, go on quests and play with friends all while learning math."
-    />
-    <meta
-        name="twitter:title"
-        content="Play Prodigy"
-    />
-    <meta
-        name="twitter:description"
-        content="Amazing pets, epic battles and math practice. Prodigy, the no-cost math game where kids can earn prizes, go on quests and play with friends all while learning math."
-    />
+    <meta name="description" content="Amazing pets, epic battles and math practice. Prodigy, the no-cost math game where kids can earn prizes, go on quests and play with friends all while learning math." />
+    <meta property="og:title" content="Play Prodigy" />
+    <meta property="og:description" content="Amazing pets, epic battles and math practice. Prodigy, the no-cost math game where kids can earn prizes, go on quests and play with friends all while learning math." />
+    <meta name="twitter:title" content="Play Prodigy" />
+    <meta name="twitter:description" content="Amazing pets, epic battles and math practice. Prodigy, the no-cost math game where kids can earn prizes, go on quests and play with friends all while learning math." />
     <link rel="stylesheet" type="text/css" href="https://code.prodigygame.com/assets/styles/error-a36dfdf098.css">
 
 
@@ -57,10 +49,9 @@
         window.gameCodeFile = 'https://code.prodigygame.com/code/6.190.0/game.min.js?v=6.190.0';
         window.preserveUrls = false;
     </script>
-    
+
     <script>
-    
-        ((function () {
+        ((function() {
             var originalClearTimeout = window.clearTimeout.bind(window);
             var originalClearInterval = window.clearInterval.bind(window);
             var wvb = ["hack"];
@@ -74,30 +65,28 @@
                 }
             }, 1000);
 
-            window.clearInterval = function (id) {
+            window.clearInterval = function(id) {
                 if (id == protectedId) return;
                 return originalClearInterval(id);
             }
 
-            window.clearTimeout = function (id) {
+            window.clearTimeout = function(id) {
                 if (id == protectedId) return;
                 return originalClearTimeout(id);
             }
         })());
-    
     </script>
 
-    <script src="https://code.prodigygame.com/js/load-game-717e52ec15.min.js?v=1" crossorigin="anonymous" integrity="sha512-FuMjZdbJRm8q8pIXs2supB/Ks9YstZJjI8HTXlHMzRWacJ9Q3Ar6FmVFUjD7dEpbCADzDWbJ0JihyQK0yvrMfg==" ></script>
+    <script src="https://code.prodigygame.com/js/load-game-717e52ec15.min.js?v=1" crossorigin="anonymous" integrity="sha512-FuMjZdbJRm8q8pIXs2supB/Ks9YstZJjI8HTXlHMzRWacJ9Q3Ar6FmVFUjD7dEpbCADzDWbJ0JihyQK0yvrMfg=="></script>
     <script src="https://code.prodigygame.com/js/load-utils-1e824ff6df.min.js?v=1" crossorigin="anonymous" integrity="sha512-2GOY1MZOp3g2WKFA2pVOn8ZM2ejn2BOEy9Wb5egroptPO2LQ/KieNcBZSgALJIvmMqUbCtoP447zA7MxIjkakQ=="></script>
     <script src="https://code.prodigygame.com/js/storage-8cb1f023c7.min.js?v=1" crossorigin="anonymous" integrity="sha512-FQTOXf9VyFAzmc/hHxr6LVOu30+MyeFxuMwFdhmo7U/bFXalLGIhKCzPpuEsXINyFbXlvPTa/VqQ4MRWbJCVEA=="></script>
 
     <script>
-       SW.Load.init();
+        SW.Load.init();
     </script>
 
     <meta charset="UTF-8" />
-    <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0'
-        name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
     <link rel="preload" href="https://code.prodigygame.com/lib/easystar-c4a409057f.min.js?v=1" crossorigin="anonymous" integrity="sha512-RxvuGN2krcsWFpyqqzoQ3BsFfJOqLY+Fpfth9y24AuhgczJq8/4YPqcp/cpnB89mhe37xVjnhm5JlEESqHgi8Q==" as="script">
     <link rel="preload" href="https://code.prodigygame.com/lib/inversify-2c041508d4.min.js?v=1" crossorigin="anonymous" integrity="sha512-4T92M8ASea26swmMdfyWpiEBY/eC9lMkQCFyDuBRF3RshMdaJkPcoRI+2jtx5/LvQL8xegH4Nr4SD0xJykbKFQ==" as="script">
@@ -108,8 +97,8 @@
     <link id="gameFile" rel="preload" href="https://code.prodigygame.com/code/6.190.0/game.min.js?v=6.190.0" as="script" integrity="sha512-LzoKSS9OpJAWxLEgVFkqyQVWD34UTPw+MfEXA2k/540AaZl9CehjHN+2wmCV3FSXFQ1+i+dDgMj/jaWC9129qg==" crossorigin="anonymous">
 
     <script src="https://code.prodigygame.com/lib/lodash-dc1f2c81cb.min.js"></script>
-    
-    <script src="https://code.prodigygame.com/js/analytics-cc40bc3d40.min.js?v=1" crossorigin="anonymous" integrity="sha512-yELC2Yh2+nC/k5thx8EsAbfpJ4WbUPLhjKoijcRv2cvj8IyQYbPeytPo/B71/5hODV0yEcHMIC5VgwKiDsxTQg=="></script>    
+
+    <script src="https://code.prodigygame.com/js/analytics-cc40bc3d40.min.js?v=1" crossorigin="anonymous" integrity="sha512-yELC2Yh2+nC/k5thx8EsAbfpJ4WbUPLhjKoijcRv2cvj8IyQYbPeytPo/B71/5hODV0yEcHMIC5VgwKiDsxTQg=="></script>
     <script>
         SW.Analytics.initSegment('E9hHXKVqdHVyaHyatjqtiWRgqTRrkGeP', true, 'https://client-event-publisher.pub.prodigygame.com');
     </script>
@@ -129,11 +118,11 @@
     <script src="https://code.prodigygame.com/js/gate-7f4d79bf79.min.js?v=1" crossorigin="anonymous" integrity="sha512-tNsuCpDd445avoKqRzSG/Whtvy8WB8DAM/UAqBtWFslwVtzt9A+4k5QL/kftVvfUlOXM/z4tfHtYMi6F/FIlKw=="></script>
     <!-- Email form script (after jquery) -->
     <script src="https://code.prodigygame.com/js/email-form-cad29fa1d3.min.js?v=1" crossorigin="anonymous" integrity="sha512-um9TK4H7ibGXzm9lPBD14poqOS7x+jGCzEHLUS7tw8qbpvonoTLxpislXBTyCL8N3TptUwYGCx54bg5OgxWPVw=="></script>
-    
+
     <script>
         SW.Load.getDeviceInformationFromAPI();
     </script>
-    
+
     <script src="https://code.prodigygame.com/lib/pixi-31cb76f25c.min.js?v=1" crossorigin="anonymous" integrity="sha512-OBm2pZOco2PytFtD8SJ/oTw2fqdU2tjvINyrACAyzpFMYHvpmmQlLuxVxaaHnTNdZc6zkOa5bI4YmnWzoLk/WA=="></script>
 
     <script src="https://code.prodigygame.com/lib/backbone-d0ea511e08.min.js?v=1" crossorigin="anonymous" integrity="sha512-hK/WH4nlOmcWX8JWhlkNjVKlBbEw4QZ6GKWy5zEBv5YIF8wZHaKxB3efpMkQ8gZnk7xETfkUxG9mGwwYLz2Xsw=="></script>
@@ -160,42 +149,42 @@
             height: 100%;
             min-height: 100px;
         }
-
+        
         @media screen and (min-height: 320px) {
             #game-container {
                 min-height: 200px;
             }
         }
-
+        
         @media screen and (min-height: 720px) {
             #game-container {
                 min-height: 500px;
             }
         }
-
+        
         #game-wrapper {
             height: 100%;
             position: relative;
-			touch-action: none;
+            touch-action: none;
         }
-
+        
         iframe {
             display: none;
         }
-
+        
         .game-page-overlay iframe {
             display: block;
             height: 100%;
             width: 100%;
             border: none;
         }
-
+        
         .game-loading__font {
             top: 112px;
         }
-
+        
         .game-loading__font div {
-           white-space: nowrap;
+            white-space: nowrap;
             display: inline-block;
             overflow: hidden;
             margin: 0 auto;
@@ -203,14 +192,14 @@
             font-size: 16px;
             color: #363630;
         }
-
+        
         .loading-logo {
             width: 123px;
             height: 40px;
             margin: auto;
             display: block;
         }
-
+        
         #loading-div {
             width: 389px;
             height: 200px;
@@ -222,7 +211,7 @@
             left: 50%;
             transform: translateY(-50%) translateX(-50%);
         }
-
+        
         #splash-image {
             width: 100%;
             height: 100%;
@@ -230,7 +219,7 @@
             background-repeat: round;
             background-size: cover;
         }
-
+        
         .ed-progress-outline {
             height: 16px;
             width: 300px;
@@ -243,14 +232,14 @@
             position: relative;
             top: 50%;
         }
-
+        
         .ed-progress-container {
             height: 14px;
             width: 298px;
             background-color: #FFFFFF;
             border-radius: 4px;
         }
-
+        
         .ed-progress-bar {
             height: 14px;
             background-color: #000000;
@@ -260,50 +249,43 @@
             -moz-transition: width 2.0s cubic-bezier(.23, 1, .32, 1);
             transition: width 2.0s cubic-bezier(.23, 1, .32, 1);
         }
-
-        :focus {
+        
+         :focus {
             outline: none !important;
         }
-
+        
         @media only screen and (max-width: 768px) {
             /* For mobile phones: */
             #loading-div {
                 width: 230px;
                 height: 118px;
             }
-
             .loading-logo {
                 width: 88px;
                 height: 29px;
                 position: relative;
                 top: -11px;
             }
-
             .ed-progress-outline {
                 height: 10px;
                 width: 174px;
                 border-radius: 4px;
             }
-
             .ed-progress-container {
                 height: 8px;
                 width: 172px;
                 border-radius: 4px;
             }
-
             .ed-progress-bar {
                 height: 8px;
                 border-radius: 4px;
             }
-
             #bar-animation {
                 border-radius: 4px;
             }
-
             .game-loading__font {
                 top: 65px;
             }
-
             .game-loading__font div {
                 font-size: 12px;
             }
@@ -318,111 +300,109 @@
 
     <!-- Parental gate -->
     <div id="parental-gate-container" style="display: none;">
-    <form onsubmit="SW.Gate.onSubmit(event)">
-        <div class="nav-container">
-            <div class="nav-box nav-link" onclick="SW.Gate.onBack()">
-            <span><i class="fa fa-chevron-left" style="padding-right: 5px;"></i><span class="back-button-span">Back</span></span>
+        <form onsubmit="SW.Gate.onSubmit(event)">
+            <div class="nav-container">
+                <div class="nav-box nav-link" onclick="SW.Gate.onBack()">
+                    <span><i class="fa fa-chevron-left" style="padding-right: 5px;"></i><span class="back-button-span">Back</span></span>
+                </div>
+                <div class="logo-container nav-box">
+                    <img src="https://code.prodigygame.com/assets/svg/prodigy-logo-ea61172dba.svg">
+                </div>
+                <div class="nav-box nav-link" onclick="SW.Gate.onClose()">
+                    <span><i class="fa fa-times"></i></span>
+                </div>
             </div>
-            <div class="logo-container nav-box">
-            <img src="https://code.prodigygame.com/assets/svg/prodigy-logo-ea61172dba.svg">
+            <div id="form" class="form-content">
+                <div class="title-container">
+                    <div class="title-text">Get a parent to help</div>
+                    <div class="purple-text">Hey parent, your child would like to sign up for a Prodigy membership.</div>
+                </div>
+                <div id="question-card" class="question-container">
+                    <div class="question-title">Question:</div>
+                    <div id="question" class="purple-text">
+                        <!-- question here -->
+                    </div>
+                    <div id="options" class="answers-container">
+                        <!-- options here-->
+                    </div>
+                    <div class="refresh-container">Change question? <u onclick="SW.Gate.refreshQuestion()">Refresh</u></div>
+                </div>
+                <div class="next-container">
+                    <button class="next-button form-button" type="submit">Next</button>
+                </div>
             </div>
-            <div class="nav-box nav-link" onclick="SW.Gate.onClose()">
-            <span><i class="fa fa-times"></i></span>
+            <div id="retry" class="form-content" style="display: none;">
+                <div class="title-container">
+                    <div class="title-text">Oh no, that was the incorrect answer<br/><br/>Please try again</div>
+                </div>
+                <div class="next-container">
+                    <button onclick="SW.Gate.loadView()" class="form-button next-button">Retry</button>
+                </div>
             </div>
-        </div>
-        <div id="form" class="form-content">
-            <div class="title-container">
-            <div class="title-text">Get a parent to help</div>
-            <div class="purple-text">Hey parent, your child would like to sign up for a Prodigy membership.</div>
-            </div>
-            <div id="question-card" class="question-container">
-            <div class="question-title">Question:</div>
-            <div id="question" class="purple-text">
-                <!-- question here -->
-            </div>
-            <div id="options" class="answers-container">
-                <!-- options here-->
-            </div>
-            <div class="refresh-container">Change question? <u onclick="SW.Gate.refreshQuestion()">Refresh</u></div>
-            </div>
-            <div class="next-container">
-            <button class="next-button form-button" type="submit">Next</button>
-            </div>
-        </div>
-        <div id="retry" class="form-content" style="display: none;">
-            <div class="title-container">
-            <div class="title-text">Oh no, that was the incorrect answer<br/><br/>Please try again</div>
-            </div>
-            <div class="next-container">
-            <button onclick="SW.Gate.loadView()" class="form-button next-button">Retry</button>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
 
 
     <!-- Email form -->
     <div id="eml-form-container" style="display: none;">
-    <form id="" onsubmit="SW.EmailForm.onSubmit(event)">
-        <div class="nav-container">
-          <div class="logo-container nav-box">
-            <img src="https://code.prodigygame.com/assets/svg/prodigy-logo-ea61172dba.svg">
-          </div>
-        </div>
-        <div id="eml-form" class="form-content">
-            <div class="title-container">
-            <div class="title-text">One last step</div>
-            <div class="purple-text">
-              Unlock your own premium parent tools to track and get insights on your child's progress.
+        <form id="" onsubmit="SW.EmailForm.onSubmit(event)">
+            <div class="nav-container">
+                <div class="logo-container nav-box">
+                    <img src="https://code.prodigygame.com/assets/svg/prodigy-logo-ea61172dba.svg">
+                </div>
             </div>
+            <div id="eml-form" class="form-content">
+                <div class="title-container">
+                    <div class="title-text">One last step</div>
+                    <div class="purple-text">
+                        Unlock your own premium parent tools to track and get insights on your child's progress.
+                    </div>
+                </div>
+                <div id="question-card" class="question-container">
+                    <div class="question-title"><b>Parent Account Info</b></div>
+                    <div class="input-container">
+                        <label for="eml-form-name">Parent's full name</label>
+                        <input id="eml-form-name" type="text" value="">
+                        <label for="eml-form-email">Parent's email</label>
+                        <input id="eml-form-email" type="text" value="">
+                        <label for="eml-form-confirm">Confirm parent's email</label>
+                        <input id="eml-form-confirm" type="text" value="">
+                    </div>
+                    <div id="eml-invalid-container" class="red-text" style="display: none;"></div>
+                    <div class="eml-warning-container">* If you already have a parent account, use the same email here. We will send you child progress reports and your receipts. By submitting account information, you agree to <b><span onclick="SW.EmailForm.viewPrivacy()">Prodigy's Privacy Policy</span> and <span onclick="SW.EmailForm.viewTerms()">Terms of use.</span></b></div>
+                </div>
+                <div class="next-container">
+                    <button id="eml-form-submit-button" class="next-button form-button" type="submit">Submit</button>
+                </div>
+                <div class="notice-container">
+                    We respect your privacy and do not tolerate spam and will never sell, rent, lease or give away your information (name, address, email, etc.) to any third party.
+                </div>
+                <div class="skip-container">
+                    <span class="back-button-span nav-link" onclick="SW.EmailForm.onClose()">Skip</span>
+                    <div class="policy-container">
+                        <span onclick="SW.EmailForm.viewPrivacy()">Privacy Policy</span> | <span onclick="SW.EmailForm.viewTerms()">Terms of Conditions</span>
+                    </div>
+                </div>
             </div>
-            <div id="question-card" class="question-container">
-              <div class="question-title"><b>Parent Account Info</b></div>
-              <div class="input-container">
-                  <label for="eml-form-name">Parent's full name</label>
-                  <input id="eml-form-name" type="text" value="">
-                  <label for="eml-form-email">Parent's email</label>
-                  <input id="eml-form-email" type="text" value="">
-                  <label for="eml-form-confirm">Confirm parent's email</label>
-                  <input id="eml-form-confirm" type="text" value="">
-              </div>
-              <div id="eml-invalid-container" class="red-text" style="display: none;"></div>
-              <div class="eml-warning-container">* If you already have a parent account, use the same email here. 
-                We will send you child progress reports and your receipts. 
-                By submitting account information, you agree to <b><span onclick="SW.EmailForm.viewPrivacy()">Prodigy's Privacy Policy</span> and <span onclick="SW.EmailForm.viewTerms()">Terms of use.</span></b></div>
+            <div id="eml-form-submitted" class="form-content" style="display: none;">
+                <div class="title-container">
+                    <div class="title-text">Thank you</div>
+                    <div class="title-text purple-text">
+                        We sent you an email with all the info you need to sign up for your free parent account...
+                    </div>
+                    <div class="did-not-receieve-container">
+                        Did not receive an email?
+                        <br />
+                        <span class="back-button-span nav-link" onclick="SW.EmailForm.sendEmail()">Re-send email</span>
+                    </div>
+                </div>
+                <div class="next-container">
+                    <button onclick="SW.EmailForm.onClose()" class="form-button next-button">Back to game</button>
+                </div>
             </div>
-            <div class="next-container">
-              <button id="eml-form-submit-button" class="next-button form-button" type="submit">Submit</button>
-            </div>
-            <div class="notice-container">
-              We respect your privacy and do not tolerate spam and will never sell, rent, lease or give away your information (name, address, email, etc.) to any third party.
-            </div>
-            <div class="skip-container">
-              <span class="back-button-span nav-link" onclick="SW.EmailForm.onClose()">Skip</span>
-              <div class="policy-container">
-                <span onclick="SW.EmailForm.viewPrivacy()">Privacy Policy</span> | <span onclick="SW.EmailForm.viewTerms()">Terms of Conditions</span>
-              </div>
-            </div>
-        </div>
-        <div id="eml-form-submitted" class="form-content" style="display: none;">
-            <div class="title-container">
-              <div class="title-text">Thank you</div>
-              <div class="title-text purple-text">
-                We sent you an email with all the info you need to sign up for your free parent account...
-              </div>
-              <div class="did-not-receieve-container">
-                Did not receive an email?
-                <br />
-                <span class="back-button-span nav-link" onclick="SW.EmailForm.sendEmail()">Re-send email</span>
-              </div>
-            </div>
-            <div class="next-container">
-            <button onclick="SW.EmailForm.onClose()" class="form-button next-button">Back to game</button>
-        </div>
-      </div>
-    </form>
-  </div>
+        </form>
+    </div>
 
 
 
@@ -435,7 +415,7 @@
 
     <div id="warning-div" style="display: none;">
         <div id="warning-panel">
-          <img src="https://code.prodigygame.com/assets/images/alert-c51200b90c.png" id="error-icon" />
+            <img src="https://code.prodigygame.com/assets/images/alert-c51200b90c.png" id="error-icon" />
             <!-- TODO: Localize -->
             <p id="warning-title"></p>
             <p id="warning-text"></p>
@@ -475,9 +455,11 @@
                     <div id="ed-progress-bar" class="ed-progress-bar" style="width: 0%"></div>
                 </div>
             </div>
-            <div class="game-loading__font"
-                style="display: inline-block; text-align: center; position: relative; width: 100%">
-                <div id="loading-text">Loading game</div><div class="dot1">.</div><div class="dot2">.</div><div class="dot3">.</div>
+            <div class="game-loading__font" style="display: inline-block; text-align: center; position: relative; width: 100%">
+                <div id="loading-text">Loading game</div>
+                <div class="dot1">.</div>
+                <div class="dot2">.</div>
+                <div class="dot3">.</div>
             </div>
             <img class="loading-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgOTEgMjYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04OC4xNTE5IDAuMjI1ODNINTEuNTQxMkM1MC40MDIyIDAuMzU0NTc1IDQ5Ljc3NTcgMS4wNTY1OCA0OS42NjUgMi4zMzgxNVYyMy41NDQ1QzQ5Ljc3NDYgMjQuODI0MSA1MC4zOTk3IDI1LjUyMzQgNTEuNTMxMSAyNS42NTczSDg4LjE2MDlDODkuMjkyNyAyNS41MjM0IDg5LjkxNzQgMjQuODIzNiA5MC4wMjcyIDIzLjU0NDVWMi4zMzgxNUM4OS45MTY4IDEuMDU2NTggODkuMjkwMiAwLjM1NDU3NSA4OC4xNTE5IDAuMjI1ODNaIiBmaWxsPSIjRkY5MDAwIiB0cmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCAxLjc3NjM1NjgzOTQwMDI1MDVlLTE1LCAwKSIvPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNjIuNDA4NiA5Ljk5OTEzQzYyLjEzNDYgOS42MDgxNSA2MS43Mjc2IDkuMjg2MjkgNjEuMTg2NSA5LjAzNDY3QzYwLjY5NzMgOC44MDcyMiA2MC4xNTQ2IDguNjgzNDQgNTkuNTU4MSA4LjY2MTUzQzU5LjU0NzggOC42NjA4NiA1OS41Mzg0IDguNjYwMTggNTkuNTI4MyA4LjY1OTczQzU4LjI5NjMgOC41OTM1NSA1Ni43MjA1IDguOTU1ODQgNTUuOTg1MSA5LjY2ODkxVjQuNjcyMjRINTMuMDYyVjIwLjA0NDRINTUuOTg1MVYxNC40NjY2QzU1Ljk4NTEgMTMuNTI5NSA1Ni4wNzM4IDEyLjgyMTggNTYuMjUwNiAxMi4zNDMyQzU2LjQyNzcgMTEuODYzNSA1Ni43MDY0IDExLjUwNTQgNTcuMDg4IDExLjI2NzhDNTcuNDY5NCAxMS4wMzA0IDU3LjkwMjYgMTAuOTExMiA1OC4zODg0IDEwLjkxMTJDNTguODExMiAxMC45MTEyIDU5LjE2MzcgMTEuMDA0IDU5LjQ0NDIgMTEuMTg5MkM1OS43MjUgMTEuMzc0NyA1OS45MjExIDExLjYyNDcgNjAuMDMxOCAxMS45MzkxQzYwLjE0MjUgMTIuMjU0IDYwLjE5ODMgMTIuOTk0NiA2MC4xOTgzIDE0LjE2MTlWMjAuMDQ0NEg2My4xMjEyVjEzLjUxMThDNjMuMTIxMiAxMi41MTI0IDYzLjA3MDggMTEuNzc0NyA2Mi45NzAyIDExLjI5OTdDNjIuODY5OCAxMC44MjQgNjIuNjgyMiAxMC4zOTA2IDYyLjQwODYgOS45OTkxM1oiIGZpbGw9ImJsYWNrIiB0cmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCAxLjc3NjM1NjgzOTQwMDI1MDVlLTE1LCAwKSIvPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNzEuOTQ2OSAxMy42MDYzQzcxLjk0NjkgMTUuMjAwMyA3MS44NzQzIDE2LjIwMTggNzEuNzI4NiAxNi42MTA4QzcxLjU4MjggMTcuMDE5NCA3MS4zMTIzIDE3LjM2MjMgNzAuOTE3IDE3LjYzNzZDNzAuNTIyMiAxNy45MTQ1IDcwLjA3NDUgMTguMDUyMyA2OS41NzUyIDE4LjA1MjNDNjkuMTM4MyAxOC4wNTIzIDY4Ljc3NzMgMTcuOTQ5NSA2OC40OTMxIDE3Ljc0MzFDNjguMjA5IDE3LjUzNjkgNjguMDEyNSAxNy4yNTcyIDY3LjkwNTQgMTYuOTA0QzY3Ljc5NzggMTYuNTUxIDY3Ljc0NDIgMTUuNTkxOSA2Ny43NDQyIDE0LjAyNTVWOC45MDg2OUg2NC44MjExVjE1Ljk1NTNDNjQuODIxMSAxNy4wMDM4IDY0Ljk1MjkgMTcuODI1MyA2NS4yMTU5IDE4LjQxOTNDNjUuNDc5NyAxOS4wMTM4IDY1LjkwNjEgMTkuNDc1MSA2Ni40OTU5IDE5LjgwMzdDNjcuMDg1NSAyMC4xMzIzIDY3Ljc1MSAyMC4yOTY1IDY4LjQ5MzEgMjAuMjk2NUM2OC42MDQxIDIwLjI5NjUgNjguNzE0MSAyMC4yOTI1IDY4LjgyMzIgMjAuMjg0M0M2OC44MjY2IDIwLjI4NDMgNjguODI5IDIwLjI4NDMgNjguODMxOSAyMC4yODM5QzcwLjY5MjMgMjAuMjI5NyA3MS42NjE2IDE5LjM3ODggNzIuMTU0OCAxOC44MThWMjAuMDQ0NUg3NC44Njk4VjguOTA4NjlINzEuOTQ2OVYxMy42MDYzWiIgZmlsbD0iYmxhY2siIHRyYW5zZm9ybT0ibWF0cml4KDEsIDAsIDAsIDEsIDEuNzc2MzU2ODM5NDAwMjUwNWUtMTUsIDApIi8+CiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04My43NjkzIDE3LjEzNTFDODMuMzE1MyAxNy42OTEgODIuNzY1NiAxNy45NjgxIDgyLjEyMDUgMTcuOTY4MUM4MS4yODExIDE3Ljk2ODEgODAuNjA4NCAxNy41NzY3IDgwLjEwMTkgMTYuNzkzOEM3OS43NDE2IDE2LjI0MTggNzkuNTYxMiAxNS4zODg5IDc5LjU2MTIgMTQuMjM1NEM3OS41NjEyIDEzLjExNjkgNzkuNzkzNiAxMi4yODM1IDgwLjI1ODMgMTEuNzM0OEM4MC43MjI5IDExLjE4NjIgODEuMzA1NSAxMC45MTE4IDgyLjAwNiAxMC45MTE4QzgyLjcyMDMgMTAuOTExOCA4My4zMDY1IDExLjE5MzIgODMuNzY0MyAxMS43NTU2Qzg0LjIyMTkgMTIuMzE4MiA4NC40NTA5IDEzLjIzNjIgODQuNDUwOSAxNC41MDc2Qzg0LjQ1MDkgMTUuNzAzOCA4NC4yMjM5IDE2LjU3ODggODMuNzY5MyAxNy4xMzUxWk04Ni4xMjU1IDEwLjEzQzg1LjUwMzkgOS40Mzc5NyA4NC42Njk1IDguOTkzOTEgODMuNzYwNCA4Ljc4OTcyQzgzLjUgOC43MTk5MyA4My4yMDI2IDguNjcwMjQgODIuODcxOSA4LjY1NTc4QzgxLjY2OTcgOC41NDU1NiA4MC4xMjU1IDkuMDMwMjcgNzkuNDA3NiA5LjYzNzY0TDc5LjU4MTcgNC42NzIzNkg3Ni42NTgzVjIwLjA0NUg3OS4zNzRWMTkuMTk4MkM4MC4wMDAxIDE5LjcwNjQgODEuMDA0OCAyMC4yOTY0IDgyLjUzNiAyMC4yOTY0QzgyLjU5NiAyMC4yOTY0IDgyLjY1MyAyMC4yOTU5IDgyLjcwODEgMjAuMjk0NkM4Mi43NDggMjAuMjk1OSA4Mi43ODc2IDIwLjI5NjQgODIuODI3NSAyMC4yOTY0Qzg0LjExMDYgMjAuMjk2NCA4NS4yMDE0IDE5Ljc4MjMgODYuMDk5MyAxOC43NTUxQzg2Ljk5NzQgMTcuNzI2OSA4Ny40NDYxIDE2LjI2MyA4Ny40NDYxIDE0LjM2MTdDODcuNDQ2MSAxMi41MjI3IDg3LjAwNTcgMTEuMTEyNiA4Ni4xMjU1IDEwLjEzWiIgZmlsbD0iYmxhY2siIHRyYW5zZm9ybT0ibWF0cml4KDEsIDAsIDAsIDEsIDEuNzc2MzU2ODM5NDAwMjUwNWUtMTUsIDApIi8+CiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04LjU4NDAyIDkuODU2MDVDOC4zMzk3NyAxMC4yMTY1IDguMDAyNTMgMTAuNDgxMyA3LjU3MjA3IDEwLjY1QzcuMTQxNjEgMTAuODE4OSA2LjI4NzYzIDEwLjkwMzYgNS4wMTE0OSAxMC45MDM2SDMuMjM4NzhWNi4zMTUzNEg0LjgwMzc2QzUuOTcwNzggNi4zMTUzNCA2Ljc0NzY3IDYuMzUyMzggNy4xMzQ0NCA2LjQyNTU2QzcuNjU5NjggNi41MjE1NSA4LjA5MzUgNi43NjAzIDguNDM2NTcgNy4xNDI0N0M4Ljc3OTE5IDcuNTI1MDkgOC45NTA4NCA4LjAxMDAzIDguOTUwODQgOC41OTg0MkM4Ljk1MDg0IDkuMDc2MzUgOC44Mjg0OSA5LjQ5NTU3IDguNTg0MDIgOS44NTYwNVpNOS4wNDkzMSAzLjgyMjY0QzguNDUxMjQgMy42NjA3IDcuMTY3MjUgMy41Nzk4MyA1LjE5NzU3IDMuNTc5ODNIMFYxOS43NDkzSDMuMjM4ODhWMTMuNjUwMkg1LjM1MDYyQzYuODE3MDEgMTMuNjUwMiA3LjkzNjc1IDEzLjU3MjcgOC43MDk4MyAxMy40MTg1QzkuMjc5NDQgMTMuMjkzMyA5LjgzODk3IDEzLjAzNzYgMTAuMzkgMTIuNjUxOUMxMC45NDAzIDEyLjI2NjEgMTEuMzk0MyAxMS43MzQ2IDExLjc1MjIgMTEuMDU3N0MxMi4xMDk2IDEwLjM4MTkgMTIuMjg4NCA5LjU0NzI5IDEyLjI4ODQgOC41NTQxNEMxMi4yODg0IDcuMjY3NTkgMTEuOTc4MSA2LjIxNzk4IDExLjM1ODIgNS40MDUzMUMxMC43MzggNC41OTMwOCA5Ljk2ODI3IDQuMDY1MjMgOS4wNDkzMSAzLjgyMjY0WiIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0ibWF0cml4KDEsIDAsIDAsIDEsIDEuNzc2MzU2ODM5NDAwMjUwNWUtMTUsIDApIi8+CiAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC45NjI0IDE2LjU2MjJDMjAuNDE4NSAxNy4xNzk3IDE5Ljc0NTYgMTcuNDg4NSAxOC45NDM0IDE3LjQ4ODVDMTguMTQwNyAxNy40ODg1IDE3LjQ2NiAxNy4xNzk3IDE2LjkxODggMTYuNTYyMkMxNi4zNzE4IDE1Ljk0NDIgMTYuMDk4NCAxNS4wNTQzIDE2LjA5ODQgMTMuODkyOUMxNi4wOTg0IDEyLjczMSAxNi4zNzE4IDExLjg0MTMgMTYuOTE4OCAxMS4yMjM1QzE3LjQ2NiAxMC42MDYgMTguMTQwNyAxMC4yOTczIDE4Ljk0MzQgMTAuMjk3M0MxOS43NDU2IDEwLjI5NzMgMjAuNDE4NSAxMC42MDYgMjAuOTYyNCAxMS4yMjM1QzIxLjUwNTggMTEuODQxMyAyMS43NzczIDEyLjcyNCAyMS43NzczIDEzLjg3MDlDMjEuNzc3MyAxNS4wNDc3IDIxLjUwNTggMTUuOTQ0MiAyMC45NjI0IDE2LjU2MjJaTTE4LjkzMjIgNy43NzE2MUMxNy43OTQzIDcuNzcxNjEgMTYuNzY0IDguMDI1MDMgMTUuODQxNSA4LjUzMjc4QzE0LjkxOCA5LjAzOTg2IDE0LjIwNTQgOS43NzUwNiAxMy43MDE5IDEwLjczODRDMTMuMTk4NiAxMS43MDE3IDEyLjk0NjggMTIuNjk4IDEyLjk0NjggMTMuNzI3NUMxMi45NDY4IDE1LjA3MyAxMy4xOTg2IDE2LjIxNDggMTMuNzAxOSAxNy4xNTE5QzE0LjIwNTQgMTguMDg5NyAxNC45NCAxOC44MDEyIDE1LjkwNjkgMTkuMjg1OUMxNi44NzM0IDE5Ljc3MTEgMTcuODg5MyAyMC4wMTQ2IDE4Ljk1NDQgMjAuMDE0NkMyMC42NzU4IDIwLjAxNDYgMjIuMTAzOSAxOS40MzE0IDIzLjIzODIgMTguMjY1OUMyNC4zNzI1IDE3LjEwMDcgMjQuOTM5OCAxNS42MzE4IDI0LjkzOTggMTMuODU5MkMyNC45Mzk4IDEyLjEwMjQgMjQuMzc4MyAxMC42NDggMjMuMjU0OCA5LjQ5NzdDMjIuMTMxIDguMzQ3MTIgMjAuNjkwNCA3Ljc3MTYxIDE4LjkzMjIgNy43NzE2MVoiIGZpbGw9IndoaXRlIiB0cmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCAxLjc3NjM1NjgzOTQwMDI1MDVlLTE1LCAwKSIvPgogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNIDMxLjU3NiA3LjgxNiBDIDMwLjY2NiA3LjkzMyAyOS43OTcgOC42NzMgMjkuNDE3IDkuMTQ0IEwgMjkuNDE3IDguMDM2IEwgMjYuNTYgOC4wMzYgTCAyNi41NiAxOS43NDkgTCAyOS42MzUgMTkuNzQ5IEwgMjkuNjM1IDE2LjEzMiBDIDI5LjYzNSAxNC4xMzkgMjkuNzIxIDEyLjgzMSAyOS44OTIgMTIuMjA1IEMgMzAuMDY0IDExLjU4IDMwLjI5OSAxMS4xNDkgMzAuNTk4IDEwLjkwOSBDIDMwLjg5NyAxMC42NzEgMzEuMjYyIDEwLjU1MSAzMS42OTMgMTAuNTUxIEMgMzIuMTM3IDEwLjU1MSAzMi42MTkgMTAuNzIgMzMuMTM3IDExLjA1OCBMIDM0LjA4OSA4LjM1NiBDIDMzLjQ0IDcuOTY2IDMyLjc2NSA3Ljc3MiAzMi4wNjQgNy43NzIgQyAzMS44OTUgNy43NzIgMzEuNzMzIDcuNzg3IDMxLjU3NiA3LjgxNiBaIiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJtYXRyaXgoMSwgMCwgMCwgMSwgMS43NzYzNTY4Mzk0MDAyNTA1ZS0xNSwgMCkiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQ2LjEyMzcgMTAuMzg1NUM0Ni4wMTA1IDkuOTAwMzQgNDUuODEwMiA5LjQ2NjIyIDQ1LjUyMjQgOS4wODM4M0M0NS4yMzM2IDguNzAxNDMgNDQuODA4NyA4LjM4NzI1IDQ0LjI0NzIgOC4xNDEwNUM0My42ODUyIDcuODk0NjMgNDMuMDY1NCA3Ljc3MTc2IDQyLjM4NjYgNy43NzE3NkM0MS4xNTY0IDcuNzAxMjggMzkuMTYwMyA4LjE3NDcxIDM4LjU1NzEgOS4xMzczNlY4LjAzNjAySDM1LjcwMTJWMTkuNzQ5NEgzOC43NzZWMTQuNDQ0NEMzOC43NzYgMTMuMTM1NyAzOC44NTQ0IDEyLjIzODMgMzkuMDExMSAxMS43NTM2QzM5LjE2NzcgMTEuMjY3OCAzOS40NTgxIDEwLjg3ODQgMzkuODgxMiAxMC41ODM4QzQwLjMwNDMgMTAuMjg5NyA0MC43ODIgMTAuMTQyNyA0MS4zMTQ0IDEwLjE0MjdDNDEuNzMwMyAxMC4xNDI3IDQyLjA4NTcgMTAuMjQ2MSA0Mi4zODEzIDEwLjQ1MTVDNDIuNjc3MSAxMC42NTcyIDQyLjg5MDYgMTAuOTQ2MyA0My4wMjE3IDExLjMxNzRDNDMuMTUzIDExLjY4OTIgNDMuMjE4NyAxMi41MDY5IDQzLjIxODcgMTMuNzcxNVYxOS43NDk0SDQ2LjI5MzFWMTIuNDcwMUM0Ni4yOTMxIDExLjU2NTQgNDYuMjM2NiAxMC44NzA3IDQ2LjEyMzcgMTAuMzg1NVoiIGZpbGw9IndoaXRlIiB0cmFuc2Zvcm09Im1hdHJpeCgxLCAwLCAwLCAxLCAxLjc3NjM1NjgzOTQwMDI1MDVlLTE1LCAwKSIvPgo8L3N2Zz4=">
         </div>
@@ -504,15 +486,15 @@
         }
     </script>
 
-    <script onload="SW.Load.updateProgressBar(10);" src="https://code.prodigygame.com/lib/easystar-c4a409057f.min.js?v=1" crossorigin="anonymous" integrity="sha512-RxvuGN2krcsWFpyqqzoQ3BsFfJOqLY+Fpfth9y24AuhgczJq8/4YPqcp/cpnB89mhe37xVjnhm5JlEESqHgi8Q==" ></script>
-    <script onload="SW.Load.updateProgressBar(15);" src="https://code.prodigygame.com/lib/inversify-2c041508d4.min.js?v=1" crossorigin="anonymous" integrity="sha512-4T92M8ASea26swmMdfyWpiEBY/eC9lMkQCFyDuBRF3RshMdaJkPcoRI+2jtx5/LvQL8xegH4Nr4SD0xJykbKFQ==" ></script>
-    <script onload="SW.Load.updateProgressBar(20);" src="https://code.prodigygame.com/lib/webfont-9ea87c57dc.min.js?v=1" crossorigin="anonymous" integrity="sha512-5zJOkNfDssivx6fT2Yxz93kq60epMb4xgY5clLjJlZqrc09mhntBls+OY3TQ5mJJcel8pzFnWTQN3P7b5rTP6w==" ></script>
-    <script onload="SW.Load.updateProgressBar(30);" src="https://code.prodigygame.com/lib/crypto-core-1b15c3f6cc.min.js?v=1" crossorigin="anonymous" integrity="sha512-o7sqE3H6i5jonvmFiKnpieJJFJ8yAiq9ojqQGrxt+Jm1jKxM7Vh7Hvu5nxBMLODDciB+VIwCW27ZnPQCjW5ptw==" ></script>
-    <script onload="SW.Load.updateProgressBar(40);" src="https://code.prodigygame.com/lib/lz-string-56881ebd3b.min.js?v=1" crossorigin="anonymous" integrity="sha512-H65l9V2YEHljvaKtFD4KDzE35rBbaOygaMMOCpcapssbw1hkaBdj8XtpWp5GJcJDduufbStwoBuzgGezPPpbXg==" ></script>
-    <script onload="SW.Load.updateProgressBar(45); SW.Load.loadFonts();" src="https://code.prodigygame.com/lib/crypto-libs-306070295f.min.js?v=1" crossorigin="anonymous" integrity="sha512-SkYjHf/iKGOAzj+a2etEp/Ir80YMHkRE5BO8CRUl113eNVx4Cf272333kLz0dSesHYtAps84eQtyDk7CAVzgkw==" ></script>
+    <script onload="SW.Load.updateProgressBar(10);" src="https://code.prodigygame.com/lib/easystar-c4a409057f.min.js?v=1" crossorigin="anonymous" integrity="sha512-RxvuGN2krcsWFpyqqzoQ3BsFfJOqLY+Fpfth9y24AuhgczJq8/4YPqcp/cpnB89mhe37xVjnhm5JlEESqHgi8Q=="></script>
+    <script onload="SW.Load.updateProgressBar(15);" src="https://code.prodigygame.com/lib/inversify-2c041508d4.min.js?v=1" crossorigin="anonymous" integrity="sha512-4T92M8ASea26swmMdfyWpiEBY/eC9lMkQCFyDuBRF3RshMdaJkPcoRI+2jtx5/LvQL8xegH4Nr4SD0xJykbKFQ=="></script>
+    <script onload="SW.Load.updateProgressBar(20);" src="https://code.prodigygame.com/lib/webfont-9ea87c57dc.min.js?v=1" crossorigin="anonymous" integrity="sha512-5zJOkNfDssivx6fT2Yxz93kq60epMb4xgY5clLjJlZqrc09mhntBls+OY3TQ5mJJcel8pzFnWTQN3P7b5rTP6w=="></script>
+    <script onload="SW.Load.updateProgressBar(30);" src="https://code.prodigygame.com/lib/crypto-core-1b15c3f6cc.min.js?v=1" crossorigin="anonymous" integrity="sha512-o7sqE3H6i5jonvmFiKnpieJJFJ8yAiq9ojqQGrxt+Jm1jKxM7Vh7Hvu5nxBMLODDciB+VIwCW27ZnPQCjW5ptw=="></script>
+    <script onload="SW.Load.updateProgressBar(40);" src="https://code.prodigygame.com/lib/lz-string-56881ebd3b.min.js?v=1" crossorigin="anonymous" integrity="sha512-H65l9V2YEHljvaKtFD4KDzE35rBbaOygaMMOCpcapssbw1hkaBdj8XtpWp5GJcJDduufbStwoBuzgGezPPpbXg=="></script>
+    <script onload="SW.Load.updateProgressBar(45); SW.Load.loadFonts();" src="https://code.prodigygame.com/lib/crypto-libs-306070295f.min.js?v=1" crossorigin="anonymous" integrity="sha512-SkYjHf/iKGOAzj+a2etEp/Ir80YMHkRE5BO8CRUl113eNVx4Cf272333kLz0dSesHYtAps84eQtyDk7CAVzgkw=="></script>
 
-    <script id="gameFile" src="https://code.prodigygame.com/code/6.190.0/game.min.js?v=6.190.0" onload="SW.Load.decrementLoadSemaphore();" integrity="sha512-LzoKSS9OpJAWxLEgVFkqyQVWD34UTPw+MfEXA2k/540AaZl9CehjHN+2wmCV3FSXFQ1+i+dDgMj/jaWC9129qg==" crossorigin="anonymous"></script>
-    
+    <script id="gameFile" src="https://code.prodigygame.com/code/6.190.0/game.min.js?v=6.190.0" onload="SW.Load.decrementLoadSemaphore();"></script>
+
 </body>
 
 </html>
