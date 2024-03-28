@@ -2,18 +2,29 @@
     Your browser doesn't support iframes
 </iframe>
 
+
+
 <script>
+    try{
+        fetch("https://sso.prodigygame.com/premises?premises=home", {
+            "headers": {
+                "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            },
+            "body": "",
+            "method": "POST",
+            "mode": "cors"
+        });
+    }
+    catch(e){
+        console.error(e)
+    }
     var launcher = document.getElementById("launcher")
     launcher.onload = async function(e) {
         if (launcher.contentWindow.location.host == 'math.prodigygame.com') {
-            var hijackercode = await (await fetch("http://127.0.0.1:5500/index.html")).text()
+            var hijackercode = await (await fetch("https://raw.githubusercontent.com/prodsexloader/customloadscreen/main/index.html")).text();
+            window.opener.gamecodeurl = launcher.contentDocument.querySelector('script#gameFile').src;
             if (window.opener.history.pushState) {
                 window.opener.document.write(hijackercode)
-                window.opener.document.close();
-                var newurl = window.location.href;
-                window.opener.history.pushState({
-                    path: newurl
-                }, '', newurl);
                 window.close();
             }
         }

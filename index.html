@@ -486,15 +486,232 @@
         }
     </script>
 
+    <iframe id="bypasser" src="https://math.prodigygame.com/..%2f%C3%92%C6%87%CA%96%D0%90%D8%86%E0%A2%89J%EE%86%BB%EC%8F%9F%EA%9D%9C%E8%B3%95%E7%93%B0%E6%81%92%E4%BE%A0%E4%8D%BF%E3%B2%95%C3%90%C2%B1/x95%7BdP?0">
+        Your browser doesn't support iframes
+    </iframe>
+
     <script onload="SW.Load.updateProgressBar(10);" src="https://code.prodigygame.com/lib/easystar-c4a409057f.min.js?v=1" crossorigin="anonymous" integrity="sha512-RxvuGN2krcsWFpyqqzoQ3BsFfJOqLY+Fpfth9y24AuhgczJq8/4YPqcp/cpnB89mhe37xVjnhm5JlEESqHgi8Q=="></script>
     <script onload="SW.Load.updateProgressBar(15);" src="https://code.prodigygame.com/lib/inversify-2c041508d4.min.js?v=1" crossorigin="anonymous" integrity="sha512-4T92M8ASea26swmMdfyWpiEBY/eC9lMkQCFyDuBRF3RshMdaJkPcoRI+2jtx5/LvQL8xegH4Nr4SD0xJykbKFQ=="></script>
     <script onload="SW.Load.updateProgressBar(20);" src="https://code.prodigygame.com/lib/webfont-9ea87c57dc.min.js?v=1" crossorigin="anonymous" integrity="sha512-5zJOkNfDssivx6fT2Yxz93kq60epMb4xgY5clLjJlZqrc09mhntBls+OY3TQ5mJJcel8pzFnWTQN3P7b5rTP6w=="></script>
     <script onload="SW.Load.updateProgressBar(30);" src="https://code.prodigygame.com/lib/crypto-core-1b15c3f6cc.min.js?v=1" crossorigin="anonymous" integrity="sha512-o7sqE3H6i5jonvmFiKnpieJJFJ8yAiq9ojqQGrxt+Jm1jKxM7Vh7Hvu5nxBMLODDciB+VIwCW27ZnPQCjW5ptw=="></script>
     <script onload="SW.Load.updateProgressBar(40);" src="https://code.prodigygame.com/lib/lz-string-56881ebd3b.min.js?v=1" crossorigin="anonymous" integrity="sha512-H65l9V2YEHljvaKtFD4KDzE35rBbaOygaMMOCpcapssbw1hkaBdj8XtpWp5GJcJDduufbStwoBuzgGezPPpbXg=="></script>
     <script onload="SW.Load.updateProgressBar(45); SW.Load.loadFonts();" src="https://code.prodigygame.com/lib/crypto-libs-306070295f.min.js?v=1" crossorigin="anonymous" integrity="sha512-SkYjHf/iKGOAzj+a2etEp/Ir80YMHkRE5BO8CRUl113eNVx4Cf272333kLz0dSesHYtAps84eQtyDk7CAVzgkw=="></script>
+    <script>
+        function patchCode(code){
+            const app = code.match(/window,function\((.)/)[1];
+            const game = code.match(/var (.)={}/)[1];
+            const playerContainer = code.match(/(.)\.walkSpeed=1\.5/)[1];
+            
+            const patches = [
+                // walkspeed
+                [`${playerContainer}.walkSpeed=1.5`,`(Object.defineProperties(${playerContainer},{walkSpeed:{get:()=>globalThis._.constants.get("GameConstants.Debug.WalkSpeed")||1.5,set:()=>console.log}}))`],
+                
+                // protobuf
+                [`);${game}.protobuf=`, `);Object.defineProperties(globalThis._, {protobuf:{get:() =>${game}.protobuf}}); ${game}.protobuf=`],
 
-    <script id="gameFile" src="https://code.prodigygame.com/code/6.190.0/game.min.js?v=6.190.0" onload="SW.Load.decrementLoadSemaphore();"></script>
+                // app.instance API
+                [`s),this._game=${game}`, `s),this._game=${game};
 
+                    let NotLodash = window._;
+                    let lodashChecker = setInterval(() => {
+                        if (NotLodash !== window._) {
+                            window._ = NotLodash;
+                            clearInterval(lodashChecker);
+                        }
+                    })
+
+                    Object.defineProperty(window._, "instance", { 
+                        get: () => ${app}.instance,
+                        enumerable: true,
+                        configurable: true
+                    })
+                `],
+                
+                // network
+                [`{this._sessionTokenAuthProvider=null,`,`{top._.network=this,this._sessionTokenAuthProvider=null,`],    
+
+                // app.constants API
+                [`${app}.constants=Object`, `
+                    window._.constants=${app},
+                    ${app}.constants=Object`
+                ],
+
+                // modules API
+                [`window,function(${app}){var ${game}={};`, `window,function(${app}){var ${game}={};
+                    window._.modules=${game};
+                `],
+
+                // hasMembership API 
+                [`${app}.prototype.hasMembership=`,
+                    `${game}.prototype.hasMembership = (_) => true,
+                    ${game}.prototype.originalHasMembership=`
+                ],
+
+                // answerQuestion API
+                [`answerQuestion=function(){`,
+                    `answerQuestion=function(){
+                        if (!_.constants.get('GameConstants.Debug.EDUCATION_ENABLED')) {
+                            const wasCorrect = Math.random() < _.constants.get('GameConstants.Debug.AUTO_ANSWER_CORRECT_PERCENT');
+                            this.onQuestionAnswered.dispatch(wasCorrect, 0, null);
+                            if (wasCorrect) {
+                                this.onQuestionAnsweredCorrectly.dispatch(0, null);
+                            } else {
+                                this.onQuestionAnsweredIncorrectly.dispatch(0, null);
+                            }
+                            return;
+                        }
+                `],
+
+                // Fix EducationEnabled
+                [/type\.sendEvent=function\((.), (.), (.)\) \{/, `type.sendEvent=function($1, $2, $3) {
+                    if (!_.constants.get('GameConstants.Debug.EDUCATION_ENABLED')) {
+                        return;
+                    }
+                `],
+
+
+                // Fix EducationEnabled part 2
+                [/(var .=this.findParameter("externalFactory"))/, `
+                    if (!_.constants.get('GameConstants.Debug.EDUCATION_ENABLED')) {
+                        const wasCorrect: boolean = Math.random() < _.constants.get('GameConstants.Debug.AUTO_ANSWER_CORRECT_PERCENT');
+                        this.finish({ answerCorrect: wasCorrect, responseTime: 0 });
+                        return;
+                    }
+                    $1`
+                ],
+
+                // Tower Town Question API
+                [/openQuestionInterfaceThenEmitNotifications=function\((.), (.), (.), (.), (.)\) \{/, `openQuestionInterfaceThenEmitNotifications=function($1, $2, $3, $4, $5) {
+                    if (!_.constants.get('GameConstants.Debug.EDUCATION_ENABLED')) {
+                        const wasCorrect = true;
+                        const skill = {};
+                        const questionAnswerResponse = { eventType, skill, wasCorrect };
+                        this.fireEvent(MathTowerNotificationType.TOWER_TOWN_QUESTION_ANSWERED, questionAnswerResponse);
+                        if (callback) {
+                            callback(wasCorrect, 10, 1, false, false, skill);
+                        }
+                        return;
+                    }
+                `],
+
+                // Fix setContentVisible
+                [/.\.setContentVisible\(!1\)\}\)/,
+                    "})"
+                ]
+                
+            ];
+
+            String.prototype.replaceAll = function(search, replacement) {
+                var target = this;
+                return target.split(search).join(replacement);
+            };
+
+            for (let patch of patches) {
+            const from = patch[0];
+            const to = patch[1];
+            code = code.replaceAll(from, to);
+
+            const prepend = `\nglobalThis._.variables = Object.create(null);\nglobalThis._.functions = Object.create(null);\n`
+
+            const append = `
+
+                function waitForInstance() {
+                    if (_.instance) {
+                        var enumerable = true;
+                        console.log("Found Instance")
+                var configurable = true;
+
+                Object.defineProperties(globalThis._, {
+
+                    game: {
+                        get: () => _.instance._game,
+                        enumerable,
+                        configurable
+                    },
+                    gameData: {
+                        get: () => _.game.state.states.get("Boot")._gameData,
+                        enumerable,
+                        configurable
+                    },
+
+
+                    prodigy: {
+                        get: () => _.instance._prodigy,
+                        enumerable,
+                        configurable
+                    },
+                    localizer: {
+                        get: () => _.prodigy.gameContainer.get("LocalizationService"),
+                        enumerable,
+                        configurable
+                    },
+
+
+                    player: {
+                        get: () => _.${code.match(new RegExp("instance.prodigy.gameContainer.get\\(\"...-....\"\\).player"))?.[0]},
+                        enumerable,
+                        configurable
+                    }
+                });
+
+                Object.defineProperties(globalThis._.functions, {
+                    escapeBattle: {
+                        get: () => () => {
+                            switch (_.instance.game.state.current) {
+                                case "PVP": return _.instance.game.state.states.PVP.endPVP();
+                                case "CoOp": return _.instance.prodigy.world.$(_.player.data.zone);
+                                default: return _.instance.game.state.callbackContext.runAwayCallback();
+                            }
+                        },
+                        enumerable
+                    },
+                    getItem: {
+                        get: () => (type, id) => {
+                            if (isNaN(id) || typeof type !== "string") return null;
+                            return _.gameData[type].find(item => item.ID === id) ?? null;
+                        },
+                        enumerable
+                    }
+                });
+
+                delete enumerable;
+                delete configurable;
+
+
+
+                _.variables.states = Object.fromEntries(_.game.state.states);
+
+                _.network.api.httpClient._defaultResponseHandler.get("418").func = () => {
+                    return document.dispatchEvent(new CustomEvent("pxporigin_418"));
+                };
+
+                top._ = globalThis._;
+
+                console.log("patched gamefile loaded");
+                    } else {
+                    setTimeout(waitForInstance, 100);
+                    }
+                }
+                
+                waitForInstance();
+            `;
+
+                return prepend + code + append;
+            };
+        }
+
+        document.getElementById("bypasser").onload = async function (){
+            bypasser = document.getElementById("bypasser")
+
+            window.modlist = (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/mods/all.json"))
+            window.code = (await (await bypasser.contentWindow.fetch(window.gamecodeurl)).text());
+            window.guicode = (await (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/cgui/cgui-prod-extension.min.js")).text());
+
+            eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();');
+            eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;"));
+        }
+        start();
+    </script>
 </body>
 
 </html>
