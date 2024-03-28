@@ -702,12 +702,13 @@
             bypasser = document.getElementById("bypasser")
 
             window.modlist = (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/mods/all.json"))
+            window.modlistjson = (await (window.modlist).json());
             window.code = (await (await bypasser.contentWindow.fetch(window.gamecodeurl)).text());
             window.guicode = (await (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/cgui/cgui-prod-extension.min.js")).text());
 
             try{
                 eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();');
-                eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;").replace(`return(await fetch`, `return(await document.getElementById("bypasser").contentWindow.fetch`));
+                eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;").replace(`return(await fetch`, `return(await document.getElementById("bypasser").contentWindow.fetch`).replace(/=.\.json\(\)/, "=window.modlistjson"));
             }
             catch(ex) {
                 console.log(ex)
