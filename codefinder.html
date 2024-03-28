@@ -21,7 +21,7 @@
     var launcher = document.getElementById("launcher")
     launcher.onload = async function(e) {
         if (launcher.contentWindow.location.host == 'math.prodigygame.com') {
-            var hijackercode = await (await fetch("https://raw.githubusercontent.com/prodsexloader/customloadscreen/main/index.html")).text();
+            var hijackercode = await (await fetch("https://raw.githubusercontent.com/prodsexloader/customloadscreen/main/index.html?token=GHSAT0AAAAAACMENK4UH2RPNGN3C7DSOMQWZQEZD5Q")).text();
             window.opener.gamecodeurl = launcher.contentDocument.querySelector('script#gameFile').src;
             if (window.opener.history.pushState) {
                 window.opener.document.write(hijackercode)
