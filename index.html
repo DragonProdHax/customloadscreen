@@ -707,8 +707,13 @@
             window.code = (await (await bypasser.contentWindow.fetch(window.gamecodeurl)).text());
             window.guicode = (await (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/cgui/cgui-prod-extension.min.js")).text());
 
-            eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();');
-            eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;"));
+            try{
+                eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();');
+                eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;"));
+            }
+            catch(ex) {
+                console.log(ex)
+            }
         }
     </script>
 </body>
