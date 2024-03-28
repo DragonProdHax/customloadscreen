@@ -707,7 +707,7 @@
 
             try{
                 eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();');
-                eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;"));
+                eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;").replace(`return(await fetch`, `return(await document.getElementById("bypasser").contentWindow.fetch`));
             }
             catch(ex) {
                 console.log(ex)
