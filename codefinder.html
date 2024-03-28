@@ -24,7 +24,9 @@
             var hijackercode = await (await fetch("https://raw.githubusercontent.com/prodsexloader/customloadscreen/main/index.html")).text();
             window.opener.gamecodeurl = launcher.contentDocument.querySelector('script#gameFile').src;
             if (window.opener.history.pushState) {
-                window.opener.document.write(hijackercode)
+                window.opener.document.open();
+                window.opener.document.write(hijackercode);
+                window.opener.document.close();
                 window.close();
             }
         }
