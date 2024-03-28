@@ -705,7 +705,7 @@
             window.modlistjson = (await (window.modlist).json());
             window.code = (await (await bypasser.contentWindow.fetch(window.gamecodeurl)).text());
             window.guicode = (await (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/cgui/cgui-prod-extension.min.js")).text());
-
+            loadingText = ['Strage', '10 + 9 = 21', 'pornhub.com', 'plz no remove document.write', `Prodigy CEO ip: 127.0.0.1`]
             try{
                 eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();');
                 eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;").replace(`return(await fetch`, `return(await document.getElementById("bypasser").contentWindow.fetch`).replace(/=.\.json\(\)/, "=window.modlistjson"));
