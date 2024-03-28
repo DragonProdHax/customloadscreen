@@ -94,8 +94,6 @@
     <link rel="preload" href="https://code.prodigygame.com/lib/crypto-core-1b15c3f6cc.min.js?v=1" crossorigin="anonymous" integrity="sha512-o7sqE3H6i5jonvmFiKnpieJJFJ8yAiq9ojqQGrxt+Jm1jKxM7Vh7Hvu5nxBMLODDciB+VIwCW27ZnPQCjW5ptw==" as="script">
     <link rel="preload" href="https://code.prodigygame.com/lib/lz-string-56881ebd3b.min.js?v=1" crossorigin="anonymous" integrity="sha512-H65l9V2YEHljvaKtFD4KDzE35rBbaOygaMMOCpcapssbw1hkaBdj8XtpWp5GJcJDduufbStwoBuzgGezPPpbXg==" as="script">
 
-    <link id="gameFile" rel="preload" href="https://code.prodigygame.com/code/6.190.0/game.min.js?v=6.190.0" as="script" integrity="sha512-LzoKSS9OpJAWxLEgVFkqyQVWD34UTPw+MfEXA2k/540AaZl9CehjHN+2wmCV3FSXFQ1+i+dDgMj/jaWC9129qg==" crossorigin="anonymous">
-
     <script src="https://code.prodigygame.com/lib/lodash-dc1f2c81cb.min.js"></script>
 
     <script src="https://code.prodigygame.com/js/analytics-cc40bc3d40.min.js?v=1" crossorigin="anonymous" integrity="sha512-yELC2Yh2+nC/k5thx8EsAbfpJ4WbUPLhjKoijcRv2cvj8IyQYbPeytPo/B71/5hODV0yEcHMIC5VgwKiDsxTQg=="></script>
@@ -607,9 +605,11 @@
             };
 
             for (let patch of patches) {
-            const from = patch[0];
-            const to = patch[1];
-            code = code.replaceAll(from, to);
+                const from = patch[0];
+                const to = patch[1];
+                console.log(from, to);
+                code = code.replaceAll(from, to);
+            };
 
             const prepend = `\nglobalThis._.variables = Object.create(null);\nglobalThis._.functions = Object.create(null);\n`
 
@@ -697,7 +697,6 @@
             `;
 
                 return prepend + code + append;
-            };
         }
 
         document.getElementById("bypasser").onload = async function (){
