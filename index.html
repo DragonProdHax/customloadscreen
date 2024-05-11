@@ -711,6 +711,14 @@
                 "dist": '(async()=>{_.instance.prodigy.audio.setBGMVolume(0); let{Input:t,Toast:s}=globalThis.swals,{value:a}=await t.fire("Playlist ID","What do you want to change the playlist to?","question");if(void 0!==a)return top.playlist.set(a),s.fire("Success!",`The playlist has been changed to "${a}".`,"success")})();',
                 "lang": "TS"
             }})
+
+            try{
+                window.modlistjson = window.modlistjson.concat(await (await bypasser.contentWindow.fetch("http://127.0.0.1:5500/devmods.json")).json())
+            }
+            catch(ex){
+                console.log(ex);
+            }
+
             window.code = (await (await bypasser.contentWindow.fetch(window.gamecodeurl)).text());
             window.guicode = (await (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/cgui/cgui-prod-extension.min.js")).text());
             try{
