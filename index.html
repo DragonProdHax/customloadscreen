@@ -696,12 +696,25 @@
         document.getElementById("bypasser").onload = async function (){
             bypasser = document.getElementById("bypasser")
 
+            window.spotifycode = (await (await bypasser.contentWindow.fetch("https://raw.githubusercontent.com/prodsexloader/customloadscreen/main/spotifyembed.js")).text())
             window.modlist = (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/mods/all.json"))
             window.modlistjson = (await (window.modlist).json());
+            window.modlistjson.push({'Mod':{
+                "name": "Change Spotify Playlist",
+                "description": "Changes the selected spotify playlist to an id of your choosing.",
+                "id": "809FC115-B635-480d-95D7-DAEB1DAAA788",
+                "author": "cmdblock",
+                "created": 1715392666591,
+                "updated": 1715392666591,
+                "category": "misc",
+                "banner": "official",
+                "dist": '(async()=>{_.instance.prodigy.audio.setBGMVolume(0); let{Input:t,Toast:s}=globalThis.swals,{value:a}=await t.fire("Playlist ID","What do you want to change the playlist to?","question");if(void 0!==a)return top.playlist.set(a),s.fire("Success!",`The playlist has been changed to "${a}".`,"success")})();',
+                "lang": "TS"
+            }})
             window.code = (await (await bypasser.contentWindow.fetch(window.gamecodeurl)).text());
             window.guicode = (await (await bypasser.contentWindow.fetch("https://pxporigin.gemsvido.workers.dev/cgui/cgui-prod-extension.min.js")).text());
             try{
-                eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();');
+                eval(patchCode(window.code)+'\nSW.Load.decrementLoadSemaphore();'+`\n${spotifycode}`);
                 eval((window.guicode).replace(/\(0,..\.default\)\(`\$\{..\}\/mods\/all\.json`,\{method:"GET",headers:\[\["sid",..\]\]\}\);/, "window.modlist;").replace(`return(await fetch`, `return(await document.getElementById("bypasser").contentWindow.fetch`).replace(/=.\.json\(\)/, "=window.modlistjson"));
             }
             catch(ex) {
