@@ -77,6 +77,11 @@
     
     </script>
 
+    <script>
+        const oldremoveEventListener = document.removeEventListener
+        document.oldRemoveEventListener = oldremoveEventListener.bind(document);
+    </script>
+
     <script src="https://code.prodigygame.com/js/load-game-55ea71ca6b.min.js?v=1" crossorigin="anonymous" integrity="sha512-2AFGtDdiWhLK8FcTPTb2jJWKg/mA/OJsKuLtJBnbQwJNFo1Z8751utZ0QGA3GLShfI6PtDZiM/JC0a4l7Q8jqw==" ></script>
     <script src="https://code.prodigygame.com/js/load-utils-1e824ff6df.min.js?v=1" crossorigin="anonymous" integrity="sha512-2GOY1MZOp3g2WKFA2pVOn8ZM2ejn2BOEy9Wb5egroptPO2LQ/KieNcBZSgALJIvmMqUbCtoP447zA7MxIjkakQ=="></script>
     <script src="https://code.prodigygame.com/js/storage-8cb1f023c7.min.js?v=1" crossorigin="anonymous" integrity="sha512-FQTOXf9VyFAzmc/hHxr6LVOu30+MyeFxuMwFdhmo7U/bFXalLGIhKCzPpuEsXINyFbXlvPTa/VqQ4MRWbJCVEA=="></script>
