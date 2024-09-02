@@ -11,3 +11,12 @@ functions.dumpInversify = function(){
     })
     return objects
 }
+
+functions.warp = function(zoneName, mapName){
+    zone = _.prodigy.world.zones[zoneName];
+    mapName = mapName || Object.keys(zone.maps)[0];
+    map = zone.maps[mapName];
+    x = map.x;
+    y = map.y;
+    zone.teleport(mapName,x,y,{},{});
+}

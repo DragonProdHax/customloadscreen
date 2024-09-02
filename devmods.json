@@ -1,0 +1,58 @@
+[
+    {
+        "Mod": {
+          "name": "Hello World",
+          "description": "Whatchuthinkitdoesblud",
+          "id": "nanigga",
+          "author": "DEV",
+          "created": 0,
+          "updated": 0,
+          "category": "misc",
+          "banner": "official",
+          "dist": "(async()=>{console.log(\"Hello World\")})();",
+          "lang": "TS"
+        }
+      },
+      {
+        "Mod": {
+          "name": "Set Level",
+          "description": "Sets the level of the player.",
+          "id": "1B84BFE9-4F69-4baf-95D1-A3627A4D75CA",
+          "author": "DEV",
+          "created": 0,
+          "updated": 0,
+          "category": "player",
+          "banner": "official",
+          "dist": "(async()=>{function e(e){let t=_.player,a=parseInt(e);if(a>100){t.getLevel=()=>a;return}if(1===a){t.data.stars=0,t.data.level=1,t.getLevel=()=>1;return}t.data.stars=Math.round(-(20*((1-Math.pow(1.042,a-2))/.04200000000000004))+10),t.data.level=+a,t.getLevel=()=>t.data.level}let{NumberInput:t,Toast:a}=globalThis.swals,{value:$}=(globalThis._.player,await t.fire(\"Level\",\"What do you want to change your level to?\",\"question\"));if(void 0!==$)return e($),a.fire(\"Success!\",`Your level is not ${$}.`,\"success\")})();",
+          "lang": "TS"
+        }
+      },
+      {
+        "Mod": {
+          "name": "Give All Items",
+          "description": "Gives the player all items in the game.",
+          "id": "5FA693C6-87F1-4abf-8EE4-15EA25212E6E",
+          "author": "DEV",
+          "created": 0,
+          "updated": 0,
+          "category": "player",
+          "banner": "official",
+          "dist": "(async()=>{function a(a,e,o,t){var c=o;\"relic\"===o&&(c=\"spellRelic\"),e.backpack.data[c]=a[o].filter(a=>void 0!==a.data.member||\"follow\"!==c).map(a=>({type:c,N:t,ID:a.ID}))}var e=[\"item\",\"currency\",\"boots\",\"hat\",\"outfit\",\"mount\",\"relic\",\"follow\",\"weapon\"];let{NumberInput:o,Toast:t}=globalThis.swals,{value:c}=(globalThis._.player,await o.fire(\"Count\",\"How many of each item do you want to have?\",\"question\"));if(void 0!==c)return e.forEach(e=>{a(_.gameData,_.player,e,c)}),t.fire(\"Success!\",`You now have ${c}, of each item.`,\"success\")})();",
+          "lang": "TS"
+        }
+      },
+      {
+        "Mod": {
+          "name": "Give All Pets",
+          "description": "Gives the player all pets in the game.",
+          "id": "EA153957-FB29-46f7-A48F-E7113C5B17FF",
+          "author": "DEV",
+          "created": 0,
+          "updated": 0,
+          "category": "player",
+          "banner": "official",
+          "dist": "(async()=>{var Player=_.player,GameData=_.gameData;function WipePets(){Player.kennel._petData=[],Player.appearanceChanged=!0}function CreatePet(e){return Player.kennel._encounterInfo._data.pets=[],GameData.pet[e],Player.kennel._encounterInfo._data.pets.push({firstSeenDate:Date.now(),ID:e,timesBattled:1,timesRescued:1}),Player.kennel.petTeam.forEach(e=>{e&&e.assignRandomSpells&&e.assignRandomSpells()}),Player.appearanceChanged=!0,Player.kennel.addPet(e.toString(),9007199254740991,26376,100)}function GetAllPets(){WipePets(),GameData.pet.forEach(e=>{CreatePet(e.ID)})}GetAllPets();})();",
+          "lang": "TS"
+        }
+      }
+]
